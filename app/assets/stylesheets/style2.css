@@ -1,20 +1,19 @@
-.da-slider{
-	width: 100%;
+.da-slider1{
+	/*width: 100%;*/
 	min-width: 520px;
-	height: 400px;
+	height: 320px;
 	position: relative;
-	margin: 30px auto;
 	overflow: hidden;
-	background: #cccccc;
-	border-top: 8px solid #efc34a;
-	border-bottom: 8px solid #efc34a;
+	background: #696868;
+	border-top: 1px solid #344053;
+	border-bottom: 1px solid #344053;
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.2), 0px -2px 1px #fff;
-	-webkit-transition: background-position 1s ease-out 0.3s;
-	-moz-transition: background-position 1s ease-out 0.3s;
-	-o-transition: background-position 1s ease-out 0.3s;
-	-ms-transition: background-position 1s ease-out 0.3s;
-	transition: background-position 1s ease-out 0.3s;
-}
+	-webkit-transition: background-position 1.4s ease-in-out 0.3s;
+	-moz-transition: background-position 1.4s ease-in-out 0.3s;
+	-o-transition: background-position 1.4s ease-in-out 0.3s;
+	-ms-transition: background-position 1.4s ease-in-out 0.3s;
+	transition: background-position 1.4s ease-in-out 0.3s;
+
 .da-slide{
 	position: absolute;
 	width: 100%;

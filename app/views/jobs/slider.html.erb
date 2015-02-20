@@ -1,23 +1,23 @@
 <div class="row">
   <div class="span6"><h4>Jobs/Tenders</h4>
     <div class="slider-box" id="home" style="border: 2px solid #ccc;">
-  <div id="da-slider" class="da-slider">
-  <% Job.all.each do |job| %>
-    <% if job.approve == "Yes" && job.display_at =="home"%>
-    <div class="da-slide">
-      <h3><%= job.company_name %></h3>
-      <p><%= truncate job.hiring_description, length: 160 %></p>
-      
-      <div class="da-img"><%= image_tag job.avatar.url %></div>
-    </div>
-     <% end %>
-    <% end %>
-    
-    <nav class="da-arrows">
-      <span class="da-arrows-prev"></span>
-      <span class="da-arrows-next"></span>
-    </nav>
-  </div>
+      <div id="da-slider" class="da-slider">
+      <% Job.all.each do |job| %>
+        <% if job.approve == "Yes" && job.display_at =="home"%>
+        <div class="da-slide">
+          <h3><%= job.company_name %></h3>
+          <p><%= truncate job.hiring_description, length: 160 %></p>
+          
+          <div class="da-img"><%= image_tag job.avatar.url %></div>
+        </div>
+         <% end %>
+        <% end %>
+        
+        <nav class="da-arrows">
+          <span class="da-arrows-prev"></span>
+          <span class="da-arrows-next"></span>
+        </nav>
+      </div>
   </div>
 
   </div>
