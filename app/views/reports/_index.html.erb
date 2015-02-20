@@ -1,0 +1,22 @@
+<h3>Reports</h3>
+<%# if user_signed_in? && current_user.role == "admin" %>
+<h4></h4>
+
+<%= search_form_for @search, :method => :get, :remote =>true do |f| %>
+  
+    <%= f.label :name, "Product Search" %>
+    <%#= f.text_field :name %>
+    
+
+    <%#= select_tag :name, options_for_select(Product.all.collect {|p| [p.name,p.id]})  %>
+    <%= f.collection_select :name, Product.all, "name", "name", :prompt => "Select Symbol" %>
+    <%#= f.label :price_lteq, "Product Search" %>
+    <%#= f.select :price, options_from_collection_for_select(Product.select(:price).distinct, "price", "price", @search.price), :prompt => "Select price" %>
+     <%#= f.select :Trend_MA, options_from_collection_for_select(Product.select(:Trend_MA).distinct, "Trend_MA", "Trend_MA", @search.price), :prompt => "Trend" %>
+  &nbsp;&nbsp;&nbsp;
+  <%= f.submit "Search", :class => "btn btn-custom", :name => nil %>
+<% end %>
+
+<% #else %>
+<!-- User -->
+<%#end %>

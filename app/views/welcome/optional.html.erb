@@ -1,0 +1,12 @@
+
+<h3>Optional Analysis</h3>
+
+<p>By analyzing the Options data, one can analyze the broad level trading range in the stock. Please note that NOT all the F&O stocks have liquid options, so be careful in buying/selling options of illiquid counters.<br>
+Call with Highest Open Interest normally determines the price point for scrip which will not be easy to cross on the upside (Resistance).<br>
+Put with Highest Open Interest normally determines the price point for scrip which will not be easy to cross on the downside (Support).<br>
+Comparing the options data for a scrip with previous day(s) option data will give you insight of the change in trading range, whether the pressure is on the upside or downside.</p>
+<% if user_signed_in? && current_user.role == "admin" %>
+Admin
+<% else %>
+User
+<%end %>

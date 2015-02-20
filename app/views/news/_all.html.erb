@@ -1,0 +1,32 @@
+<br/><br/>
+  <% @news.each do |news| %>
+    <% if news.approve == "Yes"%>
+      <div class="row-fluid">
+        <div class="span2">
+        <%= image_tag news.avatar.url, :style => "width: 100px; height: 90px;"%>
+        </div>
+        <div class="span10">
+          <h4><%= news.heading %></h4>
+          <%= truncate news.news, length: 160 %>
+          <%#= news.news %><br/><br/>
+          <%=l news.created_at %>&nbsp; by &nbsp;
+          <%= news.user.name.upcase %>
+          <%= link_to "Read more", news_path(news), :class => "readmore" %><br/><br/>
+          <% if user_signed_in? && current_user.role == "admin"%>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_news_path(news), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      news_index_path(news),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+                      <%#= link_to t('.new', :default => t("helpers.links.new")),
+            new_news_path,
+            :class => 'btn btn-primary' %>
+            <% end %> 
+        </div>
+        </div>
+ <hr/>
+ <% end %>
+ <% end %>

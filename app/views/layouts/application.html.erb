@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>India Disaster Portal</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+  <body>
+   
+      <% if current_user %>
+        <%= render '/layouts/logged_on' %>
+      <% else %>
+        <%= render '/layouts/navigation' %>
+      <% end %>
+      <div id="content">
+      <div class="container" >
+        <%= flash_messages %>
+      
+      <%= yield %>
+      </div>
+    </div>
+    </div>
+
+ 
+    <%= render '/layouts/footer'%>
+
+</div>
+ </body>
+</html>

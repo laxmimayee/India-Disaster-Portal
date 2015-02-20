@@ -1,0 +1,91 @@
+<style>
+.tab-new ul.nav-tabs li a{padding: 10px 15px;}
+.tab-new ul.nav-tabs{height: 30px;}
+</style>
+<div class="container-fluid" style="background: #ffffff;">
+    <h3>Our Tools</h3>
+    	<div class="row tab-new">
+		    
+		        <ul class="nav nav-tabs container-fluid">
+					<li><%= link_to "  Screener ", welcome_screener_path , :class=>"icon-film", :method => :get, :remote =>true %></li>
+					<li>	<%= link_to "  Analytics ", welcome_analytics_path, :class=>" icon-tasks", :method => :get, :remote =>true %></li>
+					<div class="clear"></div>
+				</ul>
+
+		    </div>
+
+
+	  
+	  <div class="container-fluid box3">
+	      <%= render '/welcome/screener' %>
+	</div>
+</div>	
+<!-- 
+    <h4>The Ultimate Trade Finder</h4>
+	<p>By fusing together the elements of fundamental studies, technical analysis, options analysis and consensus figures, IntegratedInvestor allows you to view a stock from every possible direction – taking out the risk and improving your probability of profitable trades! This immensely powerful piece of financial market analysis software is pioneering Integrated Analysis and is set to take your trading and investing to new heights!</p>
+	<div class="how center"><%= image_tag "trade-finder.png" %></div>
+
+	<h4>Integrated Scanner </h4>
+	<p>The most sought after tool within the software, the Integrated Scanner allows you to scan the market for winning trades using a combination of technical, fundamental and options criteria – putting probability on your side.
+		IntegratedInvestor is more than just the sum of its parts. Standalone ProfitSource, ValueGain and OptionGear are powerful platforms. Together they are a strong blend of technical, fundamental and options analysis tools. Combined with the new Integrated Analysis modules they form the most formidable piece of software on international markets.</p>
+	<p>IntegratedInvestor is more than just the sum of its parts. Standalone ProfitSource,
+	ValueGain and OptionGear are powerful platforms. Together they are a strong blend
+	of technical, fundamental and options analysis tools. Combined with the new Integrated
+	Analysis modules they form the most formidable piece of software on international
+	markets
+	</p>
+	 <div class="row-fluid">
+      <div class="span4">
+        <div class="trade-box"><h5>ProfitSource</h5>
+			<h6>The Edge for Active Investors!</h6>
+			<ul>
+			<li>Advanced technical analysis.</li>
+			<li>Inbuilt Elliott Wave tools.</li>
+			<li>Sophisticated scanning capabilities.</li>
+			<li>Backtest your strategies to see what works.</li>
+			<li>Hot stocks at the click of a button.</li>
+			</ul>
+		</div>
+		<div class="trade-box" style="margin-top:10px; border: 2px solid #33689D;"><h5>ValueGain</h5>
+			<h6>Fundamentals Made Easy!</h6>
+			<ul>
+			<li>Invest like the world’s best.</li>
+			<li>Build your own fundamental scans.</li>
+			<li>Broker ratings for individual stocks.</li>
+			<li>Find the real value of any stock.</li>
+			<li>Financial statements at a single click.</li>
+			</ul>
+		</div>
+		<div class="trade-box" style="margin-top:10px; border: 2px solid #19A347;"><h5>OptionGear</h5>
+			<h6>The Trading Profits Enhancer!</h6>
+			<ul>
+			<li>Advanced options analysis.</li>
+			<li>Trade Scanner - what trades to take when.</li>
+			<li>DIY scanning to find the best opportunities.</li>
+			<li>Portfolio Manager to track your trades.</li>
+			<li>View the volatility of a stock before you buy.</li>
+			</ul>
+		</div>
+      	
+      </div>
+      <div class="span8">
+      	<%= image_tag "trade-finder3.png", :style=> "width:500px; height:300px;" %>
+		<%= image_tag "trade-finder4.png", :style=> "height: 300px;margin-left: -400px; margin-top: 175px;  position: absolute; width: 500px;" %>
+		<%= image_tag "trade-finder5.png", :style=> "height: 300px;margin-left: -300px;margin-top: 320px;  position: absolute; width: 500px;" %>
+      						
+      </div>
+    </div>
+    <div class="row-fluid">
+          <div class="span6 trade-box" style="margin-top:10px; border: 2px solid #AC8359;">
+          	<h5>Comprehensive Market Data <br>World Markets at Your Fingertip</h5>
+          	<p>Trading decisions are made on information. This information needs to be timely, accurate and
+				consistent. IntegratedInvestor provides data for domestic and international markets allowing you to spot opportunities as they happen.</p>
+          </div>
+          <div class="span6 trade-box" style="margin-top:10px; border: 2px solid #AC8359;">
+          	<h5>Comprehensive Market Data<br>World Markets at Your Fingertip</h5>
+          	<p>The unique Futures/Forex module allows you to follow the underlying futures, interest rate and
+				commodity markets – all of which are leading indicators of stock and sector performance.</p>
+          </div>
+        </div>
+  </div>
+</div> -->

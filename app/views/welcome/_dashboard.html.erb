@@ -1,0 +1,32 @@
+
+    <h4> You did not have any Subcription. Please select Subcription below</h4>
+        <% Subscription.all.each  do |sub| %>
+        <section id="pricePlans">
+        <ul id="plans">
+            <li class="plan">
+                <ul class="planContainer">
+                    <li class="title"><h2 class="bestPlanTitle"><%=sub.subscription_type%></h2></li>
+                    <li class="price"><p class="bestPlanPrice">$<%=sub.price%>/<span>month</span></p></li>
+                    <li>
+                        <ul class="options">
+                            <li>2x <span>option 1</span></li>
+                          
+                            <li>Free <span>option 2</span></li>
+                          
+                            <li>Unlimited <span>option 3</span></li>
+                          
+                            <li>Unlimited <span>option 4</span></li>
+                          
+                            <li>1x <span>option 5</span></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="button">
+                        <%#= link_to("Purchase", payments_complete_payment_path(:subscription_id => sub, :subscription_type => sub.subscription_type)) %>
+                        <%= link_to("Purchase", license_agrement_carts_path(:subscription_id => sub, :subscription_type => sub.subscription_type)) %>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <% end %>
+    </section>

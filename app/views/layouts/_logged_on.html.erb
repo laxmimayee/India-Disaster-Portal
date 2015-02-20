@@ -1,0 +1,52 @@
+<div class="navbar navbar-fixed-top"> 
+    
+    <div align="left" class="header">
+      <div class="container">
+        <div class="pull-right">
+          <ul class="nav-top">
+          <li><%= link_to "Dashboard", welcome_dashboard_path %></li>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <li><%= link_to "Reach Us", "#" %></li>&nbsp;&nbsp;|&nbsp;&nbsp;
+           
+            <li><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %></li>
+          </ul>
+        </div>
+        <div class="row">
+          </br>
+          <div class="span4"><span id="header-title">
+              India<font color="#F7814D">Disaster Portal</font>
+              <p class="header-sub">Geo Climate Risk Solutions Pvt Ltd </p>
+            </span></div>
+          <div class="span6">
+            
+          </div>
+        </div>
+     </div>
+    </div>
+  <div class="navbar-inner">
+    <div class="container">
+       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a> 
+      <div class="nav-collapse collapse pull-right">
+        <ul class="nav pull-right">
+          <li><%= link_to "HOME", root_path %></li>
+          <li><%=link_to "DISASTER", home_disaster_path %></li>
+          <li><%=link_to "APPS&TOOLS", home_apps_path %></li>
+          <li><%=link_to "LINK&RESOURCES", home_resources_path %></li>
+          <li><%=link_to "SOLUTIONS&ARTICLES", all_articles_path, :remote =>true %> 
+          </li>
+           <li><%=link_to "NEWS&EVENTS", all_news_index_path, :remote =>true %></li>
+         
+          <li><%=link_to "NETWORK", home_network_path %></li>
+          <li><%= link_to "ADVERTISEMENT", all_advertisements_path, :remote =>true %></li>
+           <li><%= link_to "JOBS/RFP's/TENDERS",all_jobs_path, :remote =>true %></li>
+           
+
+      </ul>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="row-fluid">
+  <div class="span3">
+    <div id='cssmenu'>
+      <ul>
+         <li class='active'>
+          <%= link_to '<i class="icon-home"></i>&nbsp;Dashboard'.html_safe, welcome_dashboard_path, :method => :get, :remote =>true %>
+        </li>
+
+         <li class='last'>
+          <%= link_to '<i class="icon-user"></i>&nbsp;Profile'.html_safe, users_profile_path, :method => :get, :remote =>true %>
+        </li>
+        
+         <li class='has-sub'><a href='#'><i class="icon-fullscreen"></i>&nbsp;ARTICLES</a>
+            <ul>
+               <li><%#=link_to "Approved Articles", approved_articles_path, :remote => true %></li>
+               <% if user_signed_in? && current_user.role == "admin"%>
+               <li><%=link_to "Yet to Approved", preview_articles_path, :remote => true   %></li>
+               <% end %>
+               <% if user_signed_in? && current_user.role == "user"%>
+               <li><%=link_to "My Articles", my_articles_path, :remote => true %></li>
+               <% end %>
+               <li><%=link_to "Create Article", new_article_path, :remote => true %></li>
+               <li><%=link_to "All articles", all_articles_path, :remote => true %></li>
+              
+               
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><i class="icon-fullscreen"></i>&nbsp;NEWS&EVENTS</a>
+            <ul>
+               <li><%=link_to "All News", all_news_index_path, :remote => true %></li>
+               <% if user_signed_in? && current_user.role == "admin"%>
+               <li><%=link_to "Yet to Approve",preview_news_index_path, :remote => true %></li><% end %>
+               <li><%=link_to "Create News", new_news_path, :remote => true %></li>
+               <% if user_signed_in? && current_user.role == "user"%>
+               <li><%=link_to "My News", my_news_index_path, :remote => true %></li><% end %>
+               
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><i class="icon-th"></i>&nbsp;JOBS/TENDERS</a>
+            <ul>
+              
+               <li><%=link_to "Approved JOBS", all_jobs_path, :remote => true %></li>
+               <% if user_signed_in? && current_user.role == "admin"%>
+               <li><%=link_to "Yet to Approve",preview_jobs_path, :remote => true  %></li><% end %>
+               <li><%=link_to "Create Job", new_job_path, :remote => true %></li>
+                <% if user_signed_in? && current_user.role == "user"%>
+                <li><%=link_to "My Jobs", my_jobs_path, :remote => true %></li><% end %>
+               
+            </ul>
+         </li>
+
+         <li class='has-sub'><a href='#'><i class="icon-th"></i>&nbsp;ADVERTISEMENTS</a>
+            <ul>
+              
+               <li><%=link_to "Approved Ads", all_advertisements_path, :remote => true %></li>
+                <% if user_signed_in? && current_user.role == "admin"%>
+               <li><%=link_to "Yet to Approve",preview_advertisements_path, :remote => true  %></li>
+               <% end%>
+               <li><%=link_to "Create Add", new_advertisement_path, :remote => true %></li>
+               <% if user_signed_in? && current_user.role == "user"%>
+               <li><%=link_to "My Adds", my_advertisements_path, :remote => true %></li><% end %>
+            </ul>
+         </li>
+
+
+
+         <li class='last'><%#= link_to '<i class="icon-cog"></i>&nbsp;Settings'.html_safe, users_settings_path, :method => :get, :remote =>true %></li>
+      </ul>
+    </div>
+    <!-- <div class="sidebar-nav">
+        <div class="well">
+            <ul class="nav nav-list">        
+              <li style="height: 30px; margin: 10px">
+
+                <%= link_to '<i class="icon-home"></i>Dashboard'.html_safe, welcome_dashboard_path, :method => :get, :remote =>true %></li>
+              <li class="divider"></li>
+              <li style="height: 30px; margin: 10px">
+                <%= link_to '<i class="icon-envelope"></i>Profile'.html_safe, users_profile_path, :method => :get, :remote =>true %>
+              <li class="divider"></li>
+              <li  style="height: 30px; margin: 10px">
+                <%= link_to '<i class="icon-comment"></i>Reports'.html_safe, reports_index_path, :method => :get, :remote =>true %></li>
+              <li class="divider"></li>
+              
+              <li style="height: 30px; margin: 10px">
+                <%= link_to '<i class="icon-cog"></i>Settings'.html_safe, users_settings_path, :method => :get, :remote =>true %></li>
+            </ul>
+        </div>
+    </div> -->
+  </div>
+
+  
+  <div class="span7 box3">
+    <%#= render '/articles/index' %>
+</div>
+</div>

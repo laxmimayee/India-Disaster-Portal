@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="span6"><h4>Jobs/Tenders</h4>
+    <div class="slider-box" id="home" style="border: 2px solid #ccc;">
+  <div id="da-slider" class="da-slider">
+  <% Job.all.each do |job| %>
+    <% if job.approve == "Yes" && job.display_at =="home"%>
+    <div class="da-slide">
+      <h3><%= job.company_name %></h3>
+      <p><%= truncate job.hiring_description, length: 160 %></p>
+      
+      <div class="da-img"><%= image_tag job.avatar.url %></div>
+    </div>
+     <% end %>
+    <% end %>
+    
+    <nav class="da-arrows">
+      <span class="da-arrows-prev"></span>
+      <span class="da-arrows-next"></span>
+    </nav>
+  </div>
+  </div>
+
+  </div>
+  <div class="span6"><h4>Advertisements</h4>
+    <div class="slider-box" id="home" style="border: 2px solid #ccc;">
+  <div id="da-slider1" class="da-slider1">
+  <% Advertisement.all.each do |add| %>
+    <% if add.approve == "Yes" && add.display_at == "home"%>
+    <div class="da-slide1 ">
+      <h3><%= add.add_heading %></h3>
+      <p><%= truncate add.add_description, length: 160 %></p>
+      
+      <div class="da-img"><%= image_tag add.avatar.url %></div>
+    </div>
+     <% end %>
+    <% end %>
+    
+    <nav class="da-arrows">
+      <span class="da-arrows-prev"></span>
+      <span class="da-arrows-next"></span>
+    </nav>
+  </div>
+  </div>
+
+  </div>
+</div>
+<div>
+  <h3>About Us</h3>
+<p>
+  India Water Portal is a website that shares knowledge and builds communities around water and related issues in India. Managed by Arghyam, the Portal has become a valuable archive of resources, working papers, reports, data, articles, news, events, opportunities and discussions on water.<br>
+
+Water is a very local topic. Surely you have had a personal experience with water, whether positive or negative at some point. India Water Portal is a platform that empowers you to share experiences and solutions, talk to experts, join conversations and learn about the work that others are doing to conserve our fast depleting water resources.
+<br>
+India Water Portal works primarily through partnerships with non-profit organisations, CSR divisions of multinational corporations and the media. We also work with volunteers from a wide range of backgrounds, disciplines and locations, who contribute their valuable time and energy to the cause of spreading awareness on and sharing solutions for India’s water problems.
+<br>
+India Water Portal was encouraged by the National Knowledge Commission, which proposed the need for knowledge portals in various areas back in 2005. Since then, it has evolved in the spirit of openness and sharing, to become one of the foremost sources of information in India for water, sanitation, agriculture, the environment, climate change, biodiversity, and other related thematic areas.
+<br>
+India Water Portal is managed and run by a team of full time staff based at Arghyam’s office in Bangalore, and part time consultants based all over India. Meet the entire team here.<br>
+</p>
+</div>
+
+<div class="row">
+  <div class="span6">
+  <div class="box4"> <%= image_tag "chart1.png"%></div></div>
+  <div class="span6">
+    <div class="box4"> 
+        <p style="  font-size: 18px; line-height: 39px; padding: 30px;"><b>Knowledge is power</b> – that’s why it’s essential that you know all you can about your company of interest. Our News feature makes this possible at the click of a button</p>
+  </div>
+  </div>
+
+</div>
+
+
+
+
+
+<style type="text/css">
+  h4 {
+font-size: 17.5px;
+margin-left: 204px;
+}
+</style>
+
+
+
+
+
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/jquery.cslider.js"></script>
+     <script type="text/javascript" src="assets/jquery.cslider1.js"></script>
+    <script type="text/javascript">
+      $(function() {
+      
+        $('#da-slider').cslider({
+          autoplay  : true,
+          bgincrement : 450
+        });
+      
+      });
+      $(function() {
+      
+        $('#da-slider1').cslider1({
+          autoplay  : true,
+          bgincrement : 450
+        });
+      
+      });
+    </script> 
+
+

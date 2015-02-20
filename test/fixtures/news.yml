@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  heading: MyString
+  news: MyString
+  approve: MyString
+
+two:
+  heading: MyString
+  news: MyString
+  approve: MyString

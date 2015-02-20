@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  add_heading: MyString
+  add_description: MyText
+  display_at: MyString
+  approve: MyString
+
+two:
+  add_heading: MyString
+  add_description: MyText
+  display_at: MyString
+  approve: MyString

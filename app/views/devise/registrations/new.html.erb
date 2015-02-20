@@ -1,0 +1,241 @@
+<script>
+$( document ).ready(function() {
+    $('select#user_country_code').on('change', function(event){
+    select_wrapper = $('#users_state_code_wrapper')
+    $('select', select_wrapper).attr('disabled', true)
+    country_code = $(this).val()
+    url = "/users/subregion_options?parent_region=" + country_code
+    select_wrapper.load(url)
+    });
+});
+  
+
+</script>
+
+<div class="container">
+<div class="testbox">
+  <h1>Registration</h1>
+  <hr></hr>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="field">
+        <%= f.text_field :name, :placeholder=>"Name",autofocus: true %>
+      </div>
+    </div>
+    <div class="span6">
+      <div class="field">
+      <%= f.email_field :email, :placeholder=>"Email", autofocus: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="field">
+        <%= f.password_field :password,:placeholder=>"8 Characters minimum", autocomplete: "off" %>
+         <% if @validatable %>
+        <em><%#= @minimum_password_length %> </em>
+        <% end %><br />
+      </div>
+    </div>
+    <div class="span6">
+      <div class="field">
+      <%= f.password_field :password_confirmation, :placeholder=>"Password Confirmation", autofocus: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="field">
+        <%= f.text_field :address1, :placeholder=>"Address1",autofocus: true %>
+      </div>
+    </div>
+    <div class="span6">
+      <div class="field">
+      <%= f.text_field :address2, :placeholder=>"Address2", autofocus: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="field">
+        <%= f.country_select :country_code %>
+      </div>
+    </div>
+    <div class="span6">
+      <div class="field">
+     <%= render partial: 'users/subregion_select', locals: {parent_region: f.object.country_code} %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="field">
+    <%= f.text_field :phone, :placeholder=>"PhoneNumber",autofocus: true %>
+  </div>
+  <div class="field"><%= recaptcha_tags %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Register", :class =>"btn btn-large btn-custom button-submit" %>
+  </div>
+  <%= render "devise/shared/links" %>
+<% end %>
+
+</div>
+
+
+
+
+</div>
+
+<style>
+
+
+h1 {
+  font-size: 32px;
+  font-weight: 300;
+  color: #4c4c4c;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.testbox {
+  margin: 20px auto;
+  width: 75%; 
+  height: 580px; 
+  -webkit-border-radius: 8px/7px; 
+  -moz-border-radius: 8px/7px; 
+  border-radius: 8px/7px; 
+  background-color: #ebebeb; 
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: solid 1px #cbc9c9;
+}
+
+input[type=radio] {
+  visibility: hidden;
+}
+
+form{
+  margin: 0 30px;
+}
+
+label.radio {
+  cursor: pointer;
+  text-indent: 35px;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+label.radio:before {
+  background: #3a57af;
+  content:'';
+  position: absolute;
+  top:2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+label.radio:after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 0.5em;
+  height: 0.25em;
+  background: transparent;
+  top: 7.5px;
+  left: 4.5px;
+  border: 3px solid #ffffff;
+  border-top: none;
+  border-right: none;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+input[type=radio]:checked + label:after {
+  opacity: 1;
+}
+
+hr{
+  color: #a9a9a9;
+  opacity: 0.3;
+}
+
+/*input[type=text],input[type=password]{
+  width: 200px; 
+  height: 39px; 
+  -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+  -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px; 
+  border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+  background-color: #fff; 
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: solid 1px #cbc9c9;
+  margin-left: -5px;
+  margin-top: 13px; 
+  padding-left: 10px;
+}*/
+
+input[type=password]{
+  margin-bottom: 25px;
+}
+
+#icon {
+  display: inline-block;
+  width: 30px;
+  background-color: #3a57af;
+  padding: 8px 0px 8px 15px;
+  margin-left: 15px;
+  -webkit-border-radius: 4px 0px 0px 4px; 
+  -moz-border-radius: 4px 0px 0px 4px; 
+  border-radius: 4px 0px 0px 4px;
+  color: white;
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: solid 0px #cbc9c9;
+}
+
+.gender {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.accounttype{
+  margin-left: 8px;
+  margin-top: 20px;
+}
+
+.button-submit {
+  float: right;
+  position: relative;
+}
+
+.button-submit:hover {
+  top: 3px;
+  background-color:#2e458b;
+  -webkit-box-shadow: none; 
+  -moz-box-shadow: none; 
+  box-shadow: none;
+  
+}
+
+
+</style>

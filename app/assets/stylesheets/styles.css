@@ -1,0 +1,410 @@
+body { 
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 12% !important;
+    background: url(bg.png) repeat;
+    text-align: justify;
+
+}
+#content {
+    padding-bottom:100px; /* Height of the footer element */
+    min-height: 570px;
+}
+.header{
+ /*   background: url(bg.jpg) repeat;*/
+    background: #ffffff;
+
+    font-size: 36px;
+    font-weight: bold;
+    padding: 5px 0px;
+
+}
+#header-title{
+    color: #3E4F6A;
+    margin: 0 20px;
+    padding: 10px 0;}
+.header-sub{
+     padding-top: 10px;
+    text-align: center;
+}
+.nav-top{display: inline-flex;}
+.navbar {
+    margin-bottom: 0;
+    overflow: visible;
+}
+.navbar {
+    margin-bottom: 0;
+    overflow: visible;
+}
+.navbar-inner {
+    background: none repeat scroll 0 0 #033A2D;
+    font-family: "OpenSansRegular";
+    font-size: 14px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar .brand {
+    color: #ffffff;
+    display: block;
+    float: left;
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: -20px;
+    padding: 10px 20px;
+}
+
+.navbar .nav > li > a {
+    color: #ffffff;
+    float: none;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.navbar .nav > li > a:hover {
+    background-color: #F7814D;
+    color: #ffffff;
+    float: none;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: #F7814D;
+    color: #ffffff;
+}
+.nav >li>a:hover, .nav>li>a:focus{
+    background-color: #F7814D ;
+
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+ }
+
+
+.box {
+    background: none repeat scroll 0 0 #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 2px 0;
+    box-shadow: 1px 1px 5px 2px rgba(225, 225, 225, 0.75);
+    display: none;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 12px;
+    height: 15%;
+    margin-top: 10px;
+    padding: 0;
+    position: relative;
+    text-align: justify;
+    text-decoration: none;
+    z-index: 1;
+}
+.box4 {
+       background: none repeat scroll 0 0 #f5f5f5;
+    border: 2px solid #ccc;
+    box-shadow: 1px 1px 5px 2px rgba(225, 225, 225, 0.75);
+    margin-top: 20px;
+    /*padding: 3px;*/
+    text-align: center;
+    height: 265px;
+    overflow: hidden;
+}
+.box h5{ margin: 15px 15px; text-align: center;}
+.box .imgbox{ background-color: #eaeaea;
+    border-bottom: 1px solid #c3bdbd;
+    border-radius: 50%;
+    border-top: 1px solid #c3bdbd;
+    margin: 0 auto !important;
+    margin-left: 24% !important;
+    overflow: hidden;
+    text-align: center;
+    width: 50%;}
+.box .imgbox img{ height: 120px; }
+.box .contentbx{   height: 120px;
+    margin: 15px 15px 10px;
+    overflow-x: hidden;
+    overflow-y: auto; }
+.box1 {
+    color: #ffffff;
+    padding-left: 10px;
+    padding-right: 80px;
+    padding-top: 20px;
+    text-align: justify;
+
+}
+
+.how{
+    position: relative;
+    border: 15px solid #FFF;
+    -webkit-box-shadow: 0 3px 5px #999;
+    -moz-box-shadow: 0 3px 5px #999;
+    box-shadow: 0 3px 5px #999;
+     height: 472px;
+    width: 630px;
+     margin-left: auto;
+    margin-right: auto;
+}
+.trade-box{
+    background: none repeat scroll 0 0 #ffffff;
+    border: 2px solid #FF3030;
+    padding: 15px;
+}
+
+h3 {
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: normal;
+}
+h5 {
+    color: menutext;
+    font-family: helvetica;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+ .btn-custom {
+  background-color: #3F506B !important;
+background-repeat: repeat-x;
+
+background-image: linear-gradient(#3F506B, #3F506B);
+border-color: #3F506B #3F506B #3F506B;
+color: #FFF !important;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
+-webkit-font-smoothing: antialiased;
+}
+}
+
+
+/*Dashboard index page*/
+#plans,#plans ul,#plans ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#pricePlans:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+#pricePlans {
+    zoom: 1;
+}
+
+#pricePlans {
+    max-width: 69em;
+    margin: 0 auto;
+}
+
+#pricePlans #plans .plan {
+    background: #fff;
+    float: left;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.planContainer .title h2 {
+    font-size: 2.125em;
+    font-weight: 300;
+    color: #3e4f6a;
+    margin: 0;
+    padding: .6em 0;
+}
+
+.planContainer .title h2.bestPlanTitle {
+    background: #3e4f6a;
+
+    background: -webkit-linear-gradient(top, #475975, #364761);
+    background: -moz-linear-gradient(top, #475975, #364761);
+    background: -o-linear-gradient(top, #475975, #364761);
+    background: -ms-linear-gradient(top, #475975, #364761);
+    background: linear-gradient(top, #475975, #364761);
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+
+.planContainer .price p {
+    background: #3e4f6a;
+
+    background: -webkit-linear-gradient(top, #475975, #364761);
+    background: -moz-linear-gradient(top, #475975, #364761);
+    background: -o-linear-gradient(top, #475975, #364761);
+    background: -ms-linear-gradient(top, #475975, #364761);
+    background: linear-gradient(top, #475975, #364761);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 700;
+    height: 2.6em;
+    line-height: 2.6em;
+    margin: 0 0 1em;
+}
+
+.planContainer .price p.bestPlanPrice {
+    background: #f7814d;
+}
+
+.planContainer .price p span {
+    color: #FBC9A3;
+}
+
+.planContainer .options {
+    margin-top: 10em;
+}
+
+.planContainer .options li {
+    font-weight: 700;
+    color: #364762;
+    line-height: 2.5;
+}
+
+.planContainer .options li span {
+    font-weight: 400;
+    color: #979797;
+}
+
+.planContainer .button a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #3e4f6a;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 2.8em;
+    border: 2px solid #3e4f6a;
+    display: inline-block;
+    width: 80%;
+    height: 2.8em;
+    border-radius: 4px;
+    margin: 1.5em 0 1.8em;
+}
+
+.planContainer .button a.bestPlanButton {
+    color: #fff;
+    background: #f7814d;
+    border: 2px solid #f7814d;
+}
+
+#credits {
+    text-align: center;
+    font-size: .8em;
+    font-style: italic;
+    color: #777;
+}
+
+#credits a {
+    color: #333;
+}
+
+#credits a:hover {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+#pricePlans #plans .plan {
+    width: 49%;
+    margin: 0 2% 20px 0;
+}
+
+#pricePlans #plans > li:nth-child(2n) {
+    margin-right: 0;
+}
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+#pricePlans #plans .plan {
+    width: 49%;
+    margin: 0 2% 20px 0;
+}
+
+#pricePlans #plans > li:nth-child(2n) {
+    margin-right: 0;
+}
+
+}
+
+@media screen and (min-width: 1025px) {
+
+#pricePlans {
+    margin: 0em;
+}
+
+#pricePlans #plans .plan {
+    width: 30%;
+    margin: 0 1.33% 20px 0;
+
+    -webkit-transition: all .25s;
+       -moz-transition: all .25s;
+        -ms-transition: all .25s;
+         -o-transition: all .25s;
+            transition: all .25s;
+}
+
+#pricePlans #plans > li:last-child {
+    margin-right: 10px;
+}
+
+#pricePlans #plans .plan:hover {
+    -webkit-transform: scale(1.04);
+       -moz-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+         -o-transform: scale(1.04);
+            transform: scale(1.04);
+}
+
+.planContainer .button a {
+    -webkit-transition: all .25s;
+       -moz-transition: all .25s;
+        -ms-transition: all .25s;
+         -o-transition: all .25s;
+            transition: all .25s;
+}
+
+.planContainer .button a:hover {
+    background: #3e4f6a;
+    color: #fff;
+}
+
+.planContainer .button a.bestPlanButton:hover {
+    background: #ff9c70;
+    border: 2px solid #ff9c70;
+}
+
+}
+.alert {
+
+margin-bottom: 10px;
+margin-top: 15px;
+}
+
+.navbar .nav > li > a:focus, a:active {
+background:#F7814D;
+color:#ffffff;
+text-decoration: bold;
+}
+a{outline:none !important;}
+
+.tab-new ul.nav-tabs li a:focus, a:active{background:#3f506b;
+color:#fff;
+text-decoration: bold; border-bottom: #3f506b solid 1px; border-top: #3f506b solid 1px;border-right: #3f506b solid 1px;border-left: #3f506b solid 1px;}
+
+.tab-new ul.nav-tabs li a{border-top: #ccc solid 1px;border-right: #ccc solid 1px;border-left: #ccc solid 1px;}
+
+.list-height ul li{ margin-bottom: 5px;}
+
+/*footer{ background-color: #CDC8C8; text-align: center; padding: 15px 0; border-top: #ccc solid 1px; margin-top: 15px;}
+*/
+#footer {
+    background:#818181;
+    width:100%;
+    height:100px;
+    position:initial;
+    bottom:0;
+    left:0;
+    color: #ffffff;
+}
+.lftmenu2{ padding: 0px !important;}

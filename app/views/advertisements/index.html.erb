@@ -1,0 +1,65 @@
+
+<style type="text/css">
+  .readmore{
+    padding-left: 200px;
+  }
+  .advertisementalign{
+padding-bottom: 6px;
+padding-left: 160px;
+width: 70%;
+}
+hr {
+  width: 80%;
+margin: 20px 0;
+border: 0;
+border-top: 1px solid #46556E;
+border-bottom: 1px solid #ffffff;
+}
+.row-fluid .span10 {
+width: 60.90598290598291%;
+}
+
+</style>
+
+<div style="width: 900px; height:auto; margin-left: 15%;">
+
+<%- model_class = Advertisement -%>
+
+<div style="width: 900px; height:auto; margin-left: 15%;">
+
+
+<br/><br/>
+
+
+  <% @advertisements.each do |advertisement| %>
+    <% if advertisement.approve == "Yes"%>
+      <div class="row-fluid">
+        <div class="span2">
+        <%= image_tag advertisement.avatar.url, :style => "width: 100px; height: 90px;"%>
+        </div>
+        <div class="span10">
+          <h4><%= advertisement.add_heading %></h4>
+          <%= truncate advertisement.add_description, length: 160 %>
+          <%#= advertisement.advertisement %><br/><br/>
+          <%=l advertisement.created_at %>&nbsp;  by 
+          <%= advertisement.user.name.upcase %>
+          <%= link_to "Read more", advertisement_path(advertisement), :class => "readmore" %><br/><br/>
+          <% if user_signed_in? && current_user.role == "admin"%>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_advertisement_path(advertisement), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      advertisement_path(advertisement),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+                      <%#= link_to t('.new', :default => t("helpers.links.new")),
+            new_advertisement_path,
+            :class => 'btn btn-primary' %>
+            <% end %> 
+        </div>
+        </div>
+ <hr/>
+ <% end %>
+ <% end %>
+   

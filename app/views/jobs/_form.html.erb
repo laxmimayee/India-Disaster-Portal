@@ -1,0 +1,82 @@
+<%= form_for @job, :html => { :class => 'form-horizontal' } do |f| %>
+  
+<div class="control-group">
+    <%= f.label :Logo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :avatar %>
+    </div>
+    <%#= error_span(@article[:avatar_file_name]) %>
+  </div>
+
+  
+  <div class="control-group">
+    <%= f.label :company, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :company_name, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :job_tittle, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tittle, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :hiring_description, :rows => 10 %>
+    </div>
+  </div>
+
+  
+  <div class="control-group">
+    <%= f.label :skills_required, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :keys, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :company_url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :company_url, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :job_location, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :job_location, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :display_at, :class => 'control-label' %>
+    <div class="controls">
+    <% if user_signed_in? && current_user.role == "admin"%>
+     <%= f.text_field :display_at, :class => 'text_field' %>
+     <% else %>
+      <%= f.select :display_at, options_for_select(%w[ Jobs home ]) %><br/>`Select Home for Display Your Add at Home page, Or It will display at Adds Page...
+      <% end %>
+    </div>
+  </div>
+  <% if user_signed_in? && current_user.role == "admin"%>
+  <div class="control-group">
+    <%= f.label :approve, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :approve , options_for_select(%w[ No Yes ]) %>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                jobs_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,65 @@
+
+<style type="text/css">
+  .readmore{
+    padding-left: 250px;
+  }
+  .articlealign{
+padding-bottom: 6px;
+padding-left: 160px;
+width: 70%;
+}
+hr {
+  width: 80%;
+margin: 20px 0;
+border: 0;
+border-top: 1px solid #46556E;
+border-bottom: 1px solid #ffffff;
+}
+.row-fluid .span10 {
+width: 60.90598290598291%;
+}
+
+</style>
+
+<div style="width: 900px; height:auto; margin-left: 15%;">
+
+<%- model_class = Article -%>
+
+<div style="width: 900px; height:auto; margin-left: 15%;">
+
+
+<br/><br/>
+
+
+  <% @articles.each do |article| %>
+    <% if article.approve == "Yes"%>
+      <div class="row-fluid">
+        <div class="span2">
+        <%= image_tag article.avatar.url, :style => "width: 100px; height: 90px;"%>
+        </div>
+        <div class="span10">
+          <h4><%= article.heading %></h4>
+          <%= truncate article.article, length: 160 %>
+          <%#= article.article %><br/><br/>
+          <%=l article.created_at %> by 
+          <%= article.user.name.upcase %>
+          <%= link_to "Read more", article_path(article), :class => "readmore" %><br/><br/>
+          <% if user_signed_in? && current_user.role == "admin"%>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_article_path(article), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      article_path(article),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+                      <%#= link_to t('.new', :default => t("helpers.links.new")),
+            new_article_path,
+            :class => 'btn btn-primary' %>
+            <% end %> 
+        </div>
+        </div>
+ <hr/>
+ <% end %>
+ <% end %>
+   
