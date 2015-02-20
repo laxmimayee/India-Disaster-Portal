@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails', '4.0.0'
-gem 'mysql2'
+#gem 'mysql2'
 
 #gem 'activeadmin', github: 'activeadmin'
 
@@ -50,3 +50,14 @@ end
 # Use debugger
 gem 'byebug'
 gem "paperclip"
+
+group :development do
+	gem 'mysql2'
+end
+
+group :production do
+	gem 'thin'
+	gem 'pg'
+end
+gem 'heroku'
+gem 'rails_12factor', group: :production

@@ -18,4 +18,21 @@ development:
   socket: /var/run/mysqld/mysqld.sock
 
 
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: portal_test
+  pool: 5
+  username: root
+  password: star
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: portal_production
+  pool: 5
+  username: root
+  password: star
+  socket: /var/run/mysqld/mysqld.sock
 
